@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.pinData, #pins, .pinTxt{
+	-webkit-transform: translateZ(0);
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0,0,0.1px);
+}
+
+.noSelect{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+html{
+	height:100%;
+	width:100%;
+	background-color: rgb(50, 50, 50);
+	background-position:center 0px;
+	background-size:100%;
+}
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12pt;
+	margin:0px;
+	background-attachment: scroll;
+	background-repeat: repeat-y;
+	width:100%;
+	height:100%;
+}
+
+#content{
+	width:1000px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}
+
+.pinData{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 220px;
+	background-color: rgb(245,245,245);
+	overflow: hidden;
+	padding: 5px 20px 35px;
+	border-radius: 3px;
+	box-shadow: 0 0 3px rgba(0,0,0,.5);
+}
+
+.pinData .pinTitle{
+	padding-bottom: 4px;
+	font-weight: 200;
+	color: #7f7f7f;
+	width: 125px;
+}
+
+.pinData .pinClose{
+	width: 16px;
+	height: 16px;
+	background-color: #E1E1E1;
+	position: absolute;
+	right: 20px;
+	top: 6px;
+	border-radius: 100%;
+	color: rgb(245,245,245);
+	text-align: center;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.pinData .pinClose:hover{
+	background-color: #7F7F7F;
+}
+
+.pinData .pinTxt{
+	height: 200px;
+	overflow: scroll;
+	border: solid 1px rgb(225,225,225);
+}
+
+.pinData .pinTxt li{
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	width: 95%;
+	padding-left: 5%;
+	padding-top: 4px;
+	padding-bottom: 3px;
+	color: #7f7f7f;
+}
+
+.pinData .pinTxt li:nth-child(odd){
+	background-color: rgba(0,0,0,.1);
+}
+
+.pinData .dragHere{
+	width: 20px;
+	height: 20px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 100%;
+	border: 1px solid #E8E8E8;
+	cursor: move;
+	margin-top: 5px;
+}
+
+.pinData .dragHere:hover{
+	background-color: #C8DAE5;
+}
+
+.pinData .dragHere:active{
+	background-color: #92B6CC;
+}
+
+#unoHolder{
+	width: 435px;
+	height: 300px;
+	background-image: url('assets/images/arduino.png');
+	background-repeat: no-repeat;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -218px;
+	margin-top: -150px;
+}
+
+#unoHolder ol#pins{
+	list-style-type: none;
+	text-decoration: none;
+	width: 218px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	right: 23px;
+	top: 6px;
+	height: 11px;
+}
+
+#unoHolder ol#pins li.pin{
+	float: right;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: ;
+	width: 10px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+#unoHolder ol#pins li.pin:hover{
+	transform: scale(2);
+	-ms-transform: scale(2); /* IE 9 */
+	-webkit-transform: scale(2); /* Safari and Chrome */
+	border-radius: 100%;
+	background-color: rgb(81,81,81);
+	border: 1px solid rgb(147, 147, 147);
+}
+
+#unoHolder ol#pins li.pin.active{
+	background-color: #ddb453;
+}
+
+#unoHolder ol#pins li.pin:nth-child(9){
+	margin-right: 8px;
+}
